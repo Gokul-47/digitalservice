@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar client-sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-logo">
+                    <img src="images/logoimg.webp" alt="Stackly Logo" class="brand-icon" width="50px" height="50px">
+                    <span class="brand-text">STACKLY</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="user-profile">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="user-avatar">
+                <div class="user-info">
+                    <h5 class="user-name" id="userName">Client User</h5>
+                    
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link" data-section="dashboard">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="projects">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>My Projects</span>
+                        </a>
+                    </li>
+                  
+                  
+                    
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="index.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="page-title">Client Dashboard</h1>
+                <div class="header-actions">
+                    <button class="icon-btn" onclick="window.location.href='404.html'">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">2</span>
+                    </button>
+                    <button class="icon-btn" onclick="window.location.href='404.html'">
+                        <i class="fas fa-envelope"></i>
+                        <span class="badge">1</span>
+                    </button>
+                </div>
+            </header>
+
+            <div id="dashboard-section" class="dashboard-section active">
+                <div class="dashboard-content">
+                <!-- Welcome Banner -->
+                <div class="welcome-banner animate__animated animate__fadeInDown mb-4">
+                    <div class="welcome-content">
+                        <h2>Welcome back!</h2>
+                        <p>Here's an overview of your projects and activities</p>
+                    </div>
+                    <button class="btn btn-light" onclick="window.location.href='404.html'">
+                        <i class="fas fa-plus me-2"></i>New Project Request
+                    </button>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="row g-4 mb-4">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="stat-card animate__animated animate__fadeInUp">
+                            <div class="stat-icon bg-primary">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="stat-details">
+                                <span class="stat-value">8</span>
+                                <span class="stat-label">Active Projects</span>
+                                <span class="stat-change positive">
+                                    <i class="fas fa-arrow-up"></i> 2 new
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="stat-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
+                            <div class="stat-icon bg-success">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="stat-details">
+                                <span class="stat-value">24</span>
+                                <span class="stat-label">Completed</span>
+                                <span class="stat-change positive">
+                                    <i class="fas fa-arrow-up"></i> 100%
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="stat-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+                            <div class="stat-icon bg-warning">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-details">
+                                <span class="stat-value">3</span>
+                                <span class="stat-label">Pending Review</span>
+                                <span class="stat-change neutral">
+                                    <i class="fas fa-minus"></i> 0%
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="stat-card animate__animated animate__fadeInUp" style="animation-delay: 0.3s">
+                            <div class="stat-icon bg-info">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="stat-details">
+                                <span class="stat-value">12</span>
+                                <span class="stat-label">Messages</span>
+                                <span class="stat-change positive">
+                                    <i class="fas fa-arrow-up"></i> 1 new
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects and Activity -->
+                <div class="row g-4 mb-4">
+                    <div class="col-lg-8">
+                        <div class="card dashboard-card animate__animated animate__fadeInUp">
+                            <div class="card-header">
+                                <h3 class="card-title">My Projects</h3>
+                                <button class="btn btn-sm btn-primary" onclick="window.location.href='404.html'">View All</button>
+                            </div>
+                            <div class="card-body">
+                                <div class="project-list">
+                                    <div class="project-item">
+                                        <div class="project-info">
+                                            <h4>E-Commerce Website Redesign</h4>
+                                            <p>Complete overhaul of online store</p>
+                                            <div class="project-meta">
+                                                <span class="badge badge-success">In Progress</span>
+                                                <span class="project-date"><i class="far fa-calendar"></i> Due: Mar 30, 2024</span>
+                                            </div>
+                                        </div>
+                                        <div class="project-progress">
+                                            <div class="progress-circle">
+                                                <span>75%</span>
+                                            </div>
+                                            <button class="btn btn-sm btn-outline-primary" onclick="window.location.href='404.html'">Details</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="project-item">
+                                        <div class="project-info">
+                                            <h4>Mobile App Development</h4>
+                                            <p>iOS and Android fitness application</p>
+                                            <div class="project-meta">
+                                                <span class="badge badge-warning">Review</span>
+                                                <span class="project-date"><i class="far fa-calendar"></i> Due: Apr 15, 2024</span>
+                                            </div>
+                                        </div>
+                                        <div class="project-progress">
+                                            <div class="progress-circle">
+                                                <span>45%</span>
+                                            </div>
+                                            <button class="btn btn-sm btn-outline-primary" onclick="window.location.href='404.html'">Details</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="project-item">
+                                        <div class="project-info">
+                                            <h4>Brand Identity Package</h4>
+                                            <p>Logo and branding guidelines</p>
+                                            <div class="project-meta">
+                                                <span class="badge badge-success">In Progress</span>
+                                                <span class="project-date"><i class="far fa-calendar"></i> Due: Apr 5, 2024</span>
+                                            </div>
+                                        </div>
+                                        <div class="project-progress">
+                                            <div class="progress-circle">
+                                                <span>90%</span>
+                                            </div>
+                                            <button class="btn btn-sm btn-outline-primary" onclick="window.location.href='404.html'">Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="card dashboard-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
+                            <div class="card-header">
+                                <h3 class="card-title">Recent Invoices</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="invoice-list">
+                                    <div class="invoice-item">
+                                        <div class="invoice-info">
+                                            <strong>INV-2024-001</strong>
+                                            <span class="invoice-date">Mar 1, 2024</span>
+                                        </div>
+                                        <div class="invoice-amount">
+                                            <strong>$5,000</strong>
+                                            <span class="badge badge-success">Paid</span>
+                                        </div>
+                                    </div>
+                                    <div class="invoice-item">
+                                        <div class="invoice-info">
+                                            <strong>INV-2024-002</strong>
+                                            <span class="invoice-date">Mar 15, 2024</span>
+                                        </div>
+                                        <div class="invoice-amount">
+                                            <strong>$3,500</strong>
+                                            <span class="badge badge-warning">Pending</span>
+                                        </div>
+                                    </div>
+                                    <div class="invoice-item">
+                                        <div class="invoice-info">
+                                            <strong>INV-2024-003</strong>
+                                            <span class="invoice-date">Mar 20, 2024</span>
+                                        </div>
+                                        <div class="invoice-amount">
+                                            <strong>$2,800</strong>
+                                            <span class="badge badge-success">Paid</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-sm btn-outline-primary w-100 mt-3" onclick="window.location.href='404.html'">View All Invoices</button>
+                            </div>
+                        </div>
+
+                        <div class="card dashboard-card mt-4 animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+                            <div class="card-header">
+                                <h3 class="card-title">Support</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="support-actions">
+                                    <button class="action-btn" onclick="window.location.href='404.html'">
+                                        <i class="fas fa-ticket-alt"></i>
+                                        <span>Create Ticket</span>
+                                    </button>
+                                    <button class="action-btn" onclick="window.location.href='404.html'">
+                                        <i class="fas fa-headset"></i>
+                                        <span>Contact Support</span>
+                                    </button>
+                                    <button class="action-btn" onclick="window.location.href='404.html'">
+                                        <i class="fas fa-book"></i>
+                                        <span>Documentation</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div id="projects-section" class="dashboard-section">
+                <div class="dashboard-content">
+                   
+
+                    <div class="row g-4 mb-4">
+                        <div class="col-xl-3 col-md-6">
+                            <div class="stat-card animate__animated animate__fadeInUp">
+                                <div class="stat-icon bg-primary">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <div class="stat-details">
+                                    <span class="stat-value">5</span>
+                                    <span class="stat-label">Active Projects</span>
+                                    <span class="stat-change positive">
+                                        <i class="fas fa-arrow-up"></i> 25%
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="stat-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
+                                <div class="stat-icon bg-success">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="stat-details">
+                                    <span class="stat-value">12</span>
+                                    <span class="stat-label">Completed</span>
+                                    <span class="stat-change positive">
+                                        <i class="fas fa-arrow-up"></i> 50%
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="stat-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+                                <div class="stat-icon bg-warning">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="stat-details">
+                                    <span class="stat-value">2</span>
+                                    <span class="stat-label">In Review</span>
+                                    <span class="stat-change neutral">
+                                        <i class="fas fa-minus"></i> 0%
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="stat-card animate__animated animate__fadeInUp" style="animation-delay: 0.3s">
+                                <div class="stat-icon bg-info">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="stat-details">
+                                    <span class="stat-value">$45K</span>
+                                    <span class="stat-label">Total Spent</span>
+                                    <span class="stat-change positive">
+                                        <i class="fas fa-arrow-up"></i> 15%
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card dashboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Current Projects</h3>
+                            <div class="card-actions">
+                                <select class="form-select" style="width: 150px;">
+                                    <option>All Projects</option>
+                                    <option>Active</option>
+                                    <option>Completed</option>
+                                    <option>On Hold</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="project-grid">
+                                <div class="project-card">
+                                    <div class="project-header">
+                                        <h4>E-Commerce Platform</h4>
+                                        <span class="badge badge-success">In Progress</span>
+                                    </div>
+                                    <div class="project-info">
+                                        <div class="project-meta">
+                                            <span><i class="fas fa-calendar"></i> Due: Dec 15, 2024</span>
+                                            <span><i class="fas fa-user"></i> Project Manager: Sarah</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" style="width: 75%"></div>
+                                        </div>
+                                        <small>75% Complete</small>
+                                    </div>
+                                    <div class="project-actions">
+                                        <button class="btn btn-sm btn-outline-primary" onclick="window.location.href='404.html'">View Details</button>
+                                        <button class="btn btn-sm btn-outline-info" onclick="window.location.href='404.html'">Contact PM</button>
+                                    </div>
+                                </div>
+
+                                <div class="project-card">
+                                    <div class="project-header">
+                                        <h4>Mobile App Development</h4>
+                                        <span class="badge badge-warning">In Review</span>
+                                    </div>
+                                    <div class="project-info">
+                                        <div class="project-meta">
+                                            <span><i class="fas fa-calendar"></i> Due: Jan 20, 2025</span>
+                                            <span><i class="fas fa-user"></i> Project Manager: Mike</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" style="width: 90%"></div>
+                                        </div>
+                                        <small>90% Complete</small>
+                                    </div>
+                                    <div class="project-actions">
+                                        <button class="btn btn-sm btn-outline-primary" onclick="window.location.href='404.html'">View Details</button>
+                                        <button class="btn btn-sm btn-outline-info" onclick="window.location.href='404.html'">Contact PM</button>
+                                    </div>
+                                </div>
+
+                                <div class="project-card">
+                                    <div class="project-header">
+                                        <h4>Brand Identity Design</h4>
+                                        <span class="badge badge-success">Completed</span>
+                                    </div>
+                                    <div class="project-info">
+                                        <div class="project-meta">
+                                            <span><i class="fas fa-calendar"></i> Completed: Nov 30, 2024</span>
+                                            <span><i class="fas fa-user"></i> Project Manager: Emma</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" style="width: 100%"></div>
+                                        </div>
+                                        <small>100% Complete</small>
+                                    </div>
+                                    <div class="project-actions">
+                                        <button class="btn btn-sm btn-outline-primary">View Details</button>
+                                        <button class="btn btn-sm btn-outline-success">Download Files</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="settings-section" class="dashboard-section">
+                <div class="dashboard-content">
+                    
+
+                    <div class="row g-4">
+                        <div class="col-lg-8">
+                            <div class="card dashboard-card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Profile Information</h3>
+                                </div>
+                                <div class="card-body">
+                                    <form class="settings-form">
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label class="form-label">First Name</label>
+                                                <input type="text" class="form-control" value="John">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Last Name</label>
+                                                <input type="text" class="form-control" value="Anderson">
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="form-label">Email Address</label>
+                                                <input type="email" class="form-control" value="john@techcorp.com">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Phone Number</label>
+                                                <input type="tel" class="form-control" value="+1 (555) 123-4567">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Company</label>
+                                                <input type="text" class="form-control" value="TechCorp Inc.">
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="form-label">Bio</label>
+                                                <textarea class="form-control" rows="3">CEO of TechCorp Inc., passionate about digital transformation and innovative solutions.</textarea>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="card dashboard-card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Notification Preferences</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="notification-settings">
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="emailUpdates" checked>
+                                            <label class="form-check-label" for="emailUpdates">
+                                                <strong>Email Updates</strong>
+                                                <br><small>Receive email notifications about project updates</small>
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="projectMilestones" checked>
+                                            <label class="form-check-label" for="projectMilestones">
+                                                <strong>Project Milestones</strong>
+                                                <br><small>Get notified when project milestones are reached</small>
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="deadlineReminders" checked>
+                                            <label class="form-check-label" for="deadlineReminders">
+                                                <strong>Deadline Reminders</strong>
+                                                <br><small>Receive reminders about upcoming deadlines</small>
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="marketingEmails">
+                                            <label class="form-check-label" for="marketingEmails">
+                                                <strong>Marketing Emails</strong>
+                                                <br><small>Receive newsletters and promotional content</small>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="card dashboard-card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Profile Picture</h3>
+                                </div>
+                                <div class="card-body text-center">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="profile-avatar-large mb-3">
+                                    <button class="btn btn-outline-primary">
+                                        <i class="fas fa-camera"></i>
+                                        Change Photo
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card dashboard-card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Security</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="security-options">
+                                        <button class="btn btn-outline-warning w-100 mb-2">
+                                            <i class="fas fa-key"></i>
+                                            Change Password
+                                        </button>
+                                        <button class="btn btn-outline-info w-100 mb-2">
+                                            <i class="fas fa-mobile-alt"></i>
+                                            Two-Factor Auth
+                                        </button>
+                                        <button class="btn btn-outline-danger w-100">
+                                            <i class="fas fa-sign-out-alt"></i>
+                                            Logout from All Devices
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card dashboard-card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Account Status</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="account-status">
+                                        <div class="status-item">
+                                            <span class="status-label">Account Type:</span>
+                                            <span class="status-value">Premium Client</span>
+                                        </div>
+                                        <div class="status-item">
+                                            <span class="status-label">Member Since:</span>
+                                            <span class="status-value">Jan 2023</span>
+                                        </div>
+                                        <div class="status-item">
+                                            <span class="status-label">Projects Completed:</span>
+                                            <span class="status-value">12</span>
+                                        </div>
+                                        <div class="status-item">
+                                            <span class="status-label">Current Plan:</span>
+                                            <span class="status-value">Business Pro</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
