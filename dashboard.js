@@ -42,6 +42,9 @@ $(document).ready(function() {
         $('.nav-item').removeClass('active');
         $(this).parent().addClass('active');
         
+        // Close sidebar immediately after clicking
+        $('#sidebar').removeClass('active');
+        
         // Hide all sections
         $('.dashboard-section').removeClass('active');
         // Show selected section

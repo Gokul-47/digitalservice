@@ -559,6 +559,19 @@ body {
     padding-left: 5px;
 }
 
+.contact-info p {
+    color: var(--gray-text);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+    width: 16px;
+}
+
 .newsletter-form input {
     background: rgba(99, 102, 241, 0.1);
     border: 1px solid rgba(99, 102, 241, 0.2);
